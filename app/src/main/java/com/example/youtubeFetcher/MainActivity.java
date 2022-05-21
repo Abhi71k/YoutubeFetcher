@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                                         // to fetch video title
                                         Pattern title_pattern = Pattern.compile("<title>(.*?)</title>");
                                         Matcher title_matcher = title_pattern.matcher(myResponse);
-                                        List<String> matches = new ArrayList<>();
                                         if (title_matcher.find()) {
                                             String result = title_matcher.group(1).replace("&#39;","'");
                                             try {
@@ -84,10 +83,6 @@ public class MainActivity extends AppCompatActivity {
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
-
-
-                                            System.out.println(result);
-                                            matches.add(title_matcher.group(1));
                                         }
 
                                         // to fetch views
@@ -100,9 +95,6 @@ public class MainActivity extends AppCompatActivity {
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
-
-                                            System.out.println(result);
-                                            matches.add(view_matcher.group(1));
                                         }
 
                                         // to fetch channel name
@@ -115,9 +107,6 @@ public class MainActivity extends AppCompatActivity {
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
-
-                                            System.out.println(result);
-                                            matches.add(channel_matcher.group(1));
                                         }
 
                                         // to fetch subscribers
@@ -130,9 +119,6 @@ public class MainActivity extends AppCompatActivity {
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
-
-                                            System.out.println(result);
-                                            matches.add(subscriber_matcher.group(1));
                                         }
 
 
